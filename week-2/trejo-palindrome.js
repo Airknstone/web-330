@@ -1,3 +1,11 @@
+//
+// Title: trejo-palindrome.js
+// Author: Professor Krasso
+// Modified by: Allan Trejo
+// Date: 01-06-2022
+// Description: Javascript File for trejo-palindrome.html
+//
+
 // Returns date MM/DD/YYYY
 function getTodaysDate() {
   return new Date().toLocaleDateString("en-us");

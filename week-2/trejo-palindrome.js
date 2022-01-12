@@ -39,7 +39,6 @@ document.getElementById("btnCheckPhrase").onclick = function () {
   // Variables
   let txtPhrase = document.getElementById("txtPhrase").value;
   txtPhrase = txtPhrase.toLowerCase();
-  console.log(txtPhrase);
   let assignResults = document.getElementById("assign-results");
   let today = getTodaysDate();
   let len = getLength(txtPhrase);

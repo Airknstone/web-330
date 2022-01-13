@@ -16,7 +16,7 @@ function getLength(str) {
   return str.length;
 }
 
-//Reverses string function
+//Reverses string input
 // Expected output:
 // hello => olleh
 function reverse(str) {
@@ -47,10 +47,15 @@ document.getElementById("btnCheckPhrase").onclick = function () {
   isPalindrome(txtPhrase);
 
   // Applies Template Literal to assign-results div
-  let header = `Date: ${today} </br> Original Phrase: ${txtPhrase} </br> Reversed Phrase: ${reversedPhrase} </br> Phrase Length: ${len} </br>
-    <div class="card-title">${txtPhrase}  <b><u>${
+  let header = `Date: ${today} </br> 
+  Original Phrase: ${txtPhrase} </br> 
+  Reversed Phrase: ${reversedPhrase} </br> 
+  Phrase Length: ${len} </br>
+ <div class="card-title">
+ ${txtPhrase}  <b><u>${
     isPalindrome(txtPhrase) ? "is" : "is not"
-  }</u></b> a palindrome!</div>`;
+  }</u></b> a palindrome!
+ </div>`;
 
   assignResults.innerHTML = header;
 };

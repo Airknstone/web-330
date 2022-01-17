@@ -8,62 +8,72 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Css Links -->
-    <link rel="stylesheet" href="../site.css">
-    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="../site.css" />
+    <link rel="stylesheet" href="../theme.css" />
 
     <!-- CDN Links -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+    />
 
     <!-- JS links -->
     <script src="../theme.js"></script>
     <title>WEB 330 – Enterprise JavaScript II</title>
-</head>
+  </head>
 
-<body class="light-theme">
-
+  <body class="light-theme">
     <!-- Assignment Container -->
     <div class="assign-container">
-        <h1 class="app-header">Welcome to the Palindrome App!</h1>
-        <div class="assign-content">
-            <div class="card">
-                <div class="card-title">Palindrome Checker</div>
-                <div class="card-content">
-                    <div class="form">
-                        <div class="form-field">
-                            <label for="txtPhrase">Phrase value: </label>
-                            <input type="text" class="input" id="txtPhrase" name="phraseValue">
-                        </div>
-                        <div class="form-field">
-                            <button class="btn btn-primary full-width" id="btnCheckPhrase">Submit</button>
-                        </div>
-                    </div>
-                </div>
+      <h1 class="app-header">Welcome to the Palindrome App!</h1>
+      <div class="assign-content">
+        <div class="card">
+          <div class="card-title">Palindrome Checker</div>
+          <div class="card-content">
+            <div class="form">
+              <div class="form-field">
+                <label for="txtPhrase">Phrase value: </label>
+                <input
+                  type="text"
+                  class="input"
+                  id="txtPhrase"
+                  name="phraseValue"
+                />
+              </div>
+              <div class="form-field">
+                <button class="btn btn-primary full-width" id="btnCheckPhrase">
+                  Submit
+                </button>
+              </div>
             </div>
-            <a class="return-home" href="../index.html">Return</a>
+          </div>
         </div>
+        <a class="return-home" href="../index.html">Return</a>
+      </div>
     </div>
     <!-- End Assignment Container -->
 
     <!-- Results Container -->
     <div class="assign-container">
-        <div class="assign-content">
-            <div class="card">
-                <div class="card-title">Palindrome Results</div>
-                <div class="card-content" id="assign-results"></div>
-            </div>
+      <div class="assign-content">
+        <div class="card">
+          <div class="card-title">Palindrome Results</div>
+          <div class="card-content" id="assign-results"></div>
         </div>
+      </div>
     </div>
     <!-- End Results Container   -->
 
     <!-- Link JS File -->
     <script src="./trejo-palindrome.js"></script>
-</body>
-
+  </body>
 </html>

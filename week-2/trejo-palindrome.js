@@ -5,10 +5,10 @@
 // Date: 01-06-2022
 // Description: Javascript File for trejo-palindrome.html
 //
-
+setSelectedTheme();
 // Returns date MM/DD/YYYY
 function getTodaysDate() {
-  return new Date().toLocaleDateString("en-us");
+  return new Date().toLocaleDateString('en-us');
 }
 
 // Returns string Length
@@ -22,7 +22,7 @@ function getLength(str) {
 function reverse(str) {
   let string = [...str];
   string.reverse();
-  let reverseString = string.join("");
+  let reverseString = string.join('');
   return reverseString;
 }
 
@@ -35,11 +35,11 @@ function isPalindrome(str) {
 }
 
 //Binds Onlick
-document.getElementById("btnCheckPhrase").onclick = function () {
+document.getElementById('btnCheckPhrase').onclick = function () {
   // Variables
-  let txtPhrase = document.getElementById("txtPhrase").value;
+  let txtPhrase = document.getElementById('txtPhrase').value;
   txtPhrase = txtPhrase.toLowerCase();
-  let assignResults = document.getElementById("assign-results");
+  let assignResults = document.getElementById('assign-results');
   let today = getTodaysDate();
   let len = getLength(txtPhrase);
   let reversedPhrase = reverse(txtPhrase);
@@ -53,7 +53,7 @@ document.getElementById("btnCheckPhrase").onclick = function () {
   Phrase Length: ${len} </br>
  <div class="card-title">
  ${txtPhrase}  <b><u>${
-    isPalindrome(txtPhrase) ? "is" : "is not"
+    isPalindrome(txtPhrase) ? 'is' : 'is not'
   }</u></b> a palindrome!
  </div>`;
 

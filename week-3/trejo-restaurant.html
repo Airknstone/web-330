@@ -1,0 +1,140 @@
+<!--
+    Title: index.html
+    Author: Professor Krasso
+    Modified by: Allan Trejo
+    Date: 01-19-2022
+    Description: Palindrome App, This App takes in a keyboard input and determines if the
+    value is a palindrome or not.
+    Resources: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox
+               https://www.w3schools.com/jsref/jsref_foreach.asp
+               https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Css Links -->
+    <link rel="stylesheet" href="../site.css" />
+    <link rel="stylesheet" href="../theme.css" />
+    <link rel="stylesheet" href="./trejo-restaurant.css">
+    <!-- CDN Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+    />
+
+    <!-- JS links -->
+
+    <script src="../theme.js"></script>
+    <title>WEB 330 – Enterprise JavaScript II</title>
+  </head>
+
+  <body class="light-theme">
+    <!-- Assignment Container -->
+    <div class="assign-container">
+      <h1 class="app-header">Welcome to the Restaurant App!</h1>
+      <div class="assign-content">
+        <div class="card ">
+          <div class="card-title">Restaurant Menu</div>
+          <div class="grid-container">
+
+          
+          <div class="card">
+            <div class="card-title">Beverages</div>
+            <div class="card-content">
+              <label for="soda"> </label>
+                <input type="checkbox" id="soda">Soda ($3.30)
+             <br>
+              <label for="tea">
+                <input type="checkbox" id="tea" >Sweet Tea ($3.30)
+              </label><br>
+              <label for="coffee">
+                <input type="checkbox" id="coffee">Iced Coffee ($2.49)
+              </label><br>
+              <label for="water">
+                <input type="checkbox" id="water">Bottled Water ($2.15)
+              </label><br>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-title">Appetizers</div>
+            <div class="card-content">
+              <label for="nachos"> </label>
+                <input type="checkbox" id="nachos">Nachos ($6.60)
+             <br>
+              <label for="chips-salsa">
+                <input type="checkbox" id="chips-salsa" >Chips and Salsa ($5.50)
+              </label><br>
+              <label for="pretzel">
+                <input type="checkbox" id="pretzel">Pretzel and Cheese ($8.80)
+              </label><br>              <label for="pickles">
+                <input type="checkbox" id="pickles">Fried Pickles ($8.25)
+              </label><br>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Main Courses</div>
+            <div class="card-content">
+              <label for="tacos"> </label>
+                <input type="checkbox" id="tacos">Street Tacos ($9.70)
+             <br>
+              <label for="wings">
+                <input type="checkbox" id="wings" >Boneless Wings ($12.80)
+              </label><br>
+              <label for="cheese-burger">
+                <input type="checkbox" id="cheese-burger">Cheese Burger with Fries ($12.65)
+              </label><br>
+              <label for="salad-wrap">
+                <input type="checkbox" id="salad-wrap">Chicken Wrap with Salad ($9.65)
+              </label><br>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Dessert</div>
+            <div class="card-content">
+              <label for="ice-cream"> </label>
+                <input type="checkbox" id="ice-cream">Ice Cream ($4.30)
+             <br>
+              <label for="cake">
+                <input type="checkbox" id="cake" >Chocolate Cake ($5.40)
+              </label><br>
+              <label for="apple-pie">
+                <input type="checkbox" id="apple-pie">Apple Pie ($3.80)
+              </label><br>           
+            </div> 
+            <button class="btn btn-primary full-width" id="btnOrder">
+                  Place Order
+                </button>
+          </div>
+      </div>      
+    </div>
+       <a class="return-home" href="../index.html">Return</a>
+    </div>
+    <!-- End Assignment Container -->
+
+    <!-- Results Container -->
+    <div class="assign-container">
+      <div class="assign-content">
+        <div class="card">
+          <div class="card-title">Order Summary</div>
+          <div class="card-content assign-results-text" id="order-total"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End Results Container   -->
+
+<script type="module">
+  setDefaultTheme();
+
+  import {Bill, Beverage,Appetizer, MainCourse,Dessert} from './index.js'
+</script>
+
+  </body>
+</html>

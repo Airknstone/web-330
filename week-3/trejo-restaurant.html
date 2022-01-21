@@ -133,42 +133,42 @@
 
       import { Bill, Beverage, Appetizer, MainCourse, Dessert } from './index.js';
 
-      const beveragesEl = document.getElementById('beverages')
-      const beverages = beveragesEl.getElementsByTagName('input')
-      const appetizersEl = document.getElementById('appetizers')
-      const appetizers = appetizersEl.getElementsByTagName('input')
-      const mainCourseEl = document.getElementById('main-course')
-      const mainCourses = mainCourseEl.getElementsByTagName('input')
-      const dessertsEl = document.getElementById('desserts')
-      const desserts = dessertsEl.getElementsByTagName('input')
-
       document.getElementById('btnOrder').onclick = function () {
+
+        const beveragesEl = document.getElementById('beverages')
+        const beverages = beveragesEl.getElementsByTagName('input')
+        const appetizersEl = document.getElementById('appetizers')
+        const appetizers = appetizersEl.getElementsByTagName('input')
+        const mainCourseEl = document.getElementById('main-course')
+        const mainCourses = mainCourseEl.getElementsByTagName('input')
+        const dessertsEl = document.getElementById('desserts')
+        const desserts = dessertsEl.getElementsByTagName('input')
+
+        let bill = new Bill();
+
         for (let beverage of beverages) {
           if (beverage.checked) {
-            console.log(beverage.name, beverage.value)
+            bill.addBeverage(new Beverage(beverage.name, beverage.value))
           }
         }
         for (let appetizer of appetizers) {
           if (appetizer.checked) {
-            console.log(appetizer.name, appetizer.value)
+            bill.addAppetizer(new Appetizer(appetizer.name, appetizer.value))
           }
         }
         for (let mainCourse of mainCourses) {
           if (mainCourse.checked) {
-            console.log(mainCourse.name, mainCourse.value)
+            bill.addMainCourse(new MainCourse(mainCourse.name, mainCourse.value))
           }
         }
         for (let dessert of desserts) {
           if (dessert.checked) {
-            console.log(dessert.name, dessert.value)
+            bill.addDessert(new Dessert(dessert.name, dessert.value))
           }
         }
 
+        document.getElementById('order-total').innerHTML = `Your order total is ${bill.getTotal().toFixed(2)}`
       }
-
-
-
-
     </script>
 
 </body>

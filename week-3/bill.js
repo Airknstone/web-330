@@ -22,7 +22,7 @@ export class Bill {
     this._appetizers.forEach(function (appetizer) {
       total += parseFloat(appetizer.price);
     });
-    this._beverage.forEach(function (beverage) {
+    this._beverages.forEach(function (beverage) {
       total += parseFloat(beverage.price);
     });
     this._mainCourses.forEach(function (mainCourse) {

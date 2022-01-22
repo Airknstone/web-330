@@ -31,6 +31,6 @@ export class Bill {
     this._desserts.forEach(function (dessert) {
       total += parseFloat(dessert.price);
     });
-    return total;
+    return total.toFixed(2);
   }
 }

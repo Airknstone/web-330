@@ -1,3 +1,8 @@
+/* Title: trejo-restaurant.css
+    Author: Professor Krasso
+    Modified by: Allan Trejo
+    Date: 01-19-2022
+    Description: Restaurant App Additional Styles*/
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;

@@ -1,10 +1,9 @@
 <!--
-    Title: index.html
+    Title: trejo-restaurant.html
     Author: Professor Krasso
     Modified by: Allan Trejo
     Date: 01-19-2022
-    Description: Palindrome App, This App takes in a keyboard input and determines if the
-    value is a palindrome or not.
+    Description: Restaurant App
     Resources: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox
                https://www.w3schools.com/jsref/jsref_foreach.asp
                https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
@@ -127,49 +126,53 @@
       </div>
     </div>
     <!-- End Results Container   -->
+  </div>
+  <script type="module">
+    //Sets Theme
+    setSelectedTheme();
 
-    <script type="module">
-      setSelectedTheme();
+    // Imports
+    import { Bill, Beverage, Appetizer, MainCourse, Dessert } from './index.js';
 
-      import { Bill, Beverage, Appetizer, MainCourse, Dessert } from './index.js';
+    document.getElementById('btnOrder').onclick = function () {
 
-      document.getElementById('btnOrder').onclick = function () {
+      const beveragesEl = document.getElementById('beverages')
+      const beverages = beveragesEl.getElementsByTagName('input')
+      const appetizersEl = document.getElementById('appetizers')
+      const appetizers = appetizersEl.getElementsByTagName('input')
+      const mainCourseEl = document.getElementById('main-course')
+      const mainCourses = mainCourseEl.getElementsByTagName('input')
+      const dessertsEl = document.getElementById('desserts')
+      const desserts = dessertsEl.getElementsByTagName('input')
 
-        const beveragesEl = document.getElementById('beverages')
-        const beverages = beveragesEl.getElementsByTagName('input')
-        const appetizersEl = document.getElementById('appetizers')
-        const appetizers = appetizersEl.getElementsByTagName('input')
-        const mainCourseEl = document.getElementById('main-course')
-        const mainCourses = mainCourseEl.getElementsByTagName('input')
-        const dessertsEl = document.getElementById('desserts')
-        const desserts = dessertsEl.getElementsByTagName('input')
+      // Create new bill Object
+      let bill = new Bill();
 
-        let bill = new Bill();
-
-        for (let beverage of beverages) {
-          if (beverage.checked) {
-            bill.addBeverage(new Beverage(beverage.name, beverage.value))
-          }
+      // For of to iterate over values of the html node object
+      for (let beverage of beverages) {
+        if (beverage.checked) {
+          bill.addBeverage(new Beverage(beverage.name, beverage.value))
         }
-        for (let appetizer of appetizers) {
-          if (appetizer.checked) {
-            bill.addAppetizer(new Appetizer(appetizer.name, appetizer.value))
-          }
-        }
-        for (let mainCourse of mainCourses) {
-          if (mainCourse.checked) {
-            bill.addMainCourse(new MainCourse(mainCourse.name, mainCourse.value))
-          }
-        }
-        for (let dessert of desserts) {
-          if (dessert.checked) {
-            bill.addDessert(new Dessert(dessert.name, dessert.value))
-          }
-        }
-
-        document.getElementById('order-total').innerHTML = `Your order total is ${bill.getTotal().toFixed(2)}`
       }
-    </script>
+      for (let appetizer of appetizers) {
+        if (appetizer.checked) {
+          bill.addAppetizer(new Appetizer(appetizer.name, appetizer.value))
+        }
+      }
+      for (let mainCourse of mainCourses) {
+        if (mainCourse.checked) {
+          bill.addMainCourse(new MainCourse(mainCourse.name, mainCourse.value))
+        }
+      }
+      for (let dessert of desserts) {
+        if (dessert.checked) {
+          bill.addDessert(new Dessert(dessert.name, dessert.value))
+        }
+      }
+      // Binds Order results into  div container
+      document.getElementById('order-total').innerHTML = `Your order total is ${bill.getTotal()}`
+    }
+  </script>
 
 </body>
 

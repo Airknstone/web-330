@@ -11,7 +11,7 @@ export class CalorieConverter {
   ];
   static find(str) {
     return this.data.filter((data) => {
-      if (str === data.name.toLowerCase()) {
+      if (str.includes(data.name.toLowerCase())) {
         return data;
       }
     });

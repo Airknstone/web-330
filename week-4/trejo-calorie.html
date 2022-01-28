@@ -72,6 +72,9 @@
 
         document.getElementById('btnSearch').onclick = () => {
             let txtFoodItem = txtFoodItemEl.value.toLowerCase();
+            txtFoodItem = txtFoodItem.trim();
+            console.log(txtFoodItem);
+
             let foods = CalorieConverter.find(txtFoodItem);
 
             let tableData = `

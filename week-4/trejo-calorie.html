@@ -67,14 +67,24 @@
         <!-- End Results Container   -->
     </div>
     <script type="module">
+        // Set Css Theme
         setSelectedTheme();
+
+        // Import Calorie converter class
         import { CalorieConverter } from './calorie-converter.js';
+
+        // Grab Input Element
         let txtFoodItemEl = document.getElementById('txtFoodItem');
 
+        // Button Click handler
         document.getElementById('btnSearch').onclick = () => {
+            // Grab Input Element value and set to lower case
             let txtFoodItem = txtFoodItemEl.value.toLowerCase();
+
+            // foods holds array of objects from static method
             let foods = CalorieConverter.find(txtFoodItem);
 
+            //Begin HTML Table Template
             let tableData = `
                  <table class="table">
                     <th>Name</th>
@@ -86,10 +96,11 @@
                     <td>${item.calories}</td>
                     </tr>`;
             }
-
             document.getElementById('searchResults').innerHTML =
                 tableData + ` </tbody></table>`;
+            // End HTML Table Template
         };
+        // Runs Button Click handler on keypress 'Enter'
         window.addEventListener('keyup', (event) => {
             if (event.keyCode === 13) {
                 event.preventDefault();
@@ -97,14 +108,17 @@
             }
         });
 
+        // Array of objects from Calorie converter Class
         const foodList = CalorieConverter.data;
 
+        //BEGIN HTML Example Items Template 
         let foodListData = `<i>(Ex: `;
         for (let name of foodList) {
             foodListData += name.name + ', ';
         }
         document.getElementById('foodList').innerHTML =
             foodListData.slice(0, -2) + ')</i>';
+            // ENDS HTML Example Items Template
     </script>
 </body>
 

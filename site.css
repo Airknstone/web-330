@@ -33,6 +33,8 @@ Description: Css Styling for Index.html.
 .return-home {
   color: #4f3674;
   text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .return-home:hover {
@@ -69,4 +71,12 @@ Description: Css Styling for Index.html.
 .assign-results-text {
   text-align: center;
   font-size: 28px;
+}
+.drop-down-menu {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }

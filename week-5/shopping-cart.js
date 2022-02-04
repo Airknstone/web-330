@@ -1,3 +1,8 @@
+// Title: shopping-cart.js
+// Author: Professor Krasso
+// Modified by: Allan Trejo
+// Date: 02-03-2022
+// Description: Custom Iterable Object using generators
 export class ShoppingCart {
   constructor() {
     this.products = [];
@@ -9,6 +14,8 @@ export class ShoppingCart {
   add(product) {
     this.products.push(product);
   }
-  //   Using JavaScript Iterators, create an iterator and in the body use a for…of statement to
-  // loop over the products array. Yield return each iterated product object.
+
+  *[Symbol.iterator]() {
+    yield* this.products;
+  }
 }

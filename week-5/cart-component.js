@@ -1,3 +1,8 @@
+// Title: cart-component.js
+// Author: Professor Krasso
+// Modified by: Allan Trejo
+// Date: 02-03-2022
+// Description: Web Components
 class CartComponent extends HTMLElement {
   constructor() {
     super();

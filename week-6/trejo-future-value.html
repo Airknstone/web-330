@@ -1,0 +1,151 @@
+<!--
+    Title: trejo-calorie.html
+    Author: Professor Krasso
+    Modified by: Allan Trejo
+    Date: 01-27-2022
+    Description: Calorie App that searches array of objects and returns corresponding object into html
+    Resources: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_static_initialization_blocks
+               https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+               https://www.javascripttutorial.net/javascript-array-filter/
+               https://www.w3schools.com/jsref/jsref_includes.asp
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Css Links -->
+    <link rel="stylesheet" href="../site.css" />
+    <link rel="stylesheet" href="../theme.css" />
+    <link rel="stylesheet" href="./trejo-future-value.css" />
+    <link rel="stylesheet" href="./flex-layout.css" />
+    <!-- CDN Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" />
+
+    <!-- JS links -->
+    <script src="../theme.js"></script>
+
+    <title>WEB 330 – Enterprise JavaScript II</title>
+</head>
+
+<body class="light-theme">
+    <!-- Assignment Container -->
+    <div class="assign-container">
+        <h1 class="app-header">Welcome to the Future Value App!</h1>
+        <div class="assign-content">
+            <div class="card">
+                <div class="card-title">Future Value Calculator</div>
+                <div id="errorLog" class="row col-12 danger"></div>
+                <div class="card-content">
+                    <div class="form">
+                        <div class=" form-label row">
+                            <label class="col-5" for="txtMonthlyPayment">Monthly Payment:</label>
+                            <input type="text" class="input col-7" id="txtMonthlyPayment" name="monthly payment" />
+                        </div>
+                        <div class=" form-label row">
+                            <label class="col-5" for="txtYearlyRate">Interest Rate:</label>
+                            <input type="text" class="input col-7" id="txtYearlyRate" name="Interest Rate" />
+                            <span> <i class="danger">Enter 11% as 11.1:</i></span>
+                        </div>
+                        <div class=" form-label row">
+                            <label class="col-5" for="txtMonthlyPayment">Number of Years: </label>
+                            <select id="listNumOfYears" class="drop-down-menu col-2">
+                                <!-- <option value="select">--Select--</option> -->
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <button id="btnCalculator" class="btn btn-primary full-width">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="return-home" href="../index.html">Return</a>
+        </div>
+        <!-- End Assignment Container -->
+
+        <!-- Results Container -->
+        <div class="assign-container">
+            <div class="assign-content">
+                <div class="card">
+                    <div class="card-title">Calculation as of <span id="today"></span></div>
+                    <div class="card-content assign-results-text" id="futureValue"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End Results Container   -->
+    </div>
+    <script type="module">
+        // Set Css Theme
+        setSelectedTheme();
+        import { FinanceCalculator } from './finance-calculator.js';
+        import { Validator } from './validator.js';
+
+        document.getElementById('today').innerHTML = new Date().toLocaleDateString('en-US');
+
+        document.getElementById('btnCalculator').onclick = function () {
+            let monthlyPayment = document.getElementById('txtMonthlyPayment').value;
+            let rate = document.getElementById('txtYearlyRate').value;
+            let years = document.getElementById('listNumOfYears').value;
+            let errorLogEl = document.getElementById('errorLog');
+            console.log(years);
+
+
+            let monthlyPaymentValidator = new Validator('Monthly Payment', monthlyPayment);
+            monthlyPaymentValidator.addRequiredField();
+            monthlyPaymentValidator.addRequiredFloatField();
+            monthlyPaymentValidator.addFloatMinField(100);
+            console.log(monthlyPaymentValidator);
+
+            let rateValidator = new Validator('Interest Rate', rate);
+            rateValidator.addRequiredField();
+            rateValidator.addRequiredFloatField();
+            rateValidator.addFloatMaxField(100);
+
+            let errorLog = [];
+
+            if (!monthlyPaymentValidator.validate()) {
+                for (let msg of monthlyPaymentValidator.messages) {
+                    errorLog.push(msg);
+                }
+            }
+
+            if (!rateValidator.validate()) {
+                for (let msg of rateValidator.messages) {
+                    errorLog.push(msg);
+                }
+            }
+            if (monthlyPaymentValidator.validate() && rateValidator.validate()) {
+                errorLogEl.innerHTML = '';
+                let futureValue = FinanceCalculator.calculateFutureValue(monthlyPayment, rate, years);
+                console.log(futureValue);
+                document.getElementById('futureValue').innerHTML = 'The future value is ' + FinanceCalculator.convertToCurrency(futureValue);
+            }
+            else {
+                errorLogEl.innerHTML = '';
+                let errorLogMessage = `<ul>`;
+                for (let msg of errorLog) {
+                    errorLogMessage += `<li>${msg}</li>`;
+                }
+                document.getElementById('errorLog').innerHTML = errorLogMessage + `</ul>`;
+            }
+            console.log(errorLog);
+        }
+
+    </script>
+</body>
+
+</html>

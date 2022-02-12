@@ -19,7 +19,7 @@ export class FloatField {
     }
     return true;
   }
-  /* Returns Error and Solution */
+  /* Returns Error message Solution */
   getMessage() {
     return `${this.name} must be a string, you entered ${this.field}`;
   }

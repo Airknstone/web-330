@@ -111,13 +111,13 @@
             let errorLogEl = document.getElementById('errorLog');
             let errorLog = [];
 
-            /*Create New Validator object and Add methods to Validator object */
+            /*Create New Validator object and call methods */
             let monthlyPaymentValidator = new Validator('Monthly Payment', monthlyPayment);
             monthlyPaymentValidator.addRequiredField();
             monthlyPaymentValidator.addRequiredFloatField();
             monthlyPaymentValidator.addFloatMinField(100);
 
-            /*Create New Validator object and Add methods to Validator object */
+            /*Create New Validator object and call methods  */
             let rateValidator = new Validator('Interest Rate', rate);
             rateValidator.addRequiredField();
             rateValidator.addRequiredFloatField();

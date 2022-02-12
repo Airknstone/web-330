@@ -1,13 +1,11 @@
 <!--
-    Title: trejo-calorie.html
+    Title: trejo-future-value.html
     Author: Professor Krasso
     Modified by: Allan Trejo
-    Date: 01-27-2022
-    Description: Calorie App that searches array of objects and returns corresponding object into html
+    Date: 02-11-2022
+    Description: Compound Calculator App
     Resources: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_static_initialization_blocks
-               https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
-               https://www.javascripttutorial.net/javascript-array-filter/
-               https://www.w3schools.com/jsref/jsref_includes.asp
+
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +38,10 @@
                 <div class="card-title">Future Value Calculator</div>
                 <div class="card-content">
                     <div class="form">
+                        <!-- Display Error Here Else Empty -->
                         <div id="errorLog" class="row col-12 danger"> </div>
+
+                        <!-- BEGIN Inputs and Labels -->
                         <div class=" form-label row">
                             <label class="col-5" for="txtMonthlyPayment">Monthly Payment:</label>
                             <input type="text" class="input col-7" id="txtMonthlyPayment" name="monthly payment" />
@@ -67,6 +68,7 @@
 
                             </select>
                         </div>
+                        <!-- END Labels and Inputs -->
                         <div class="form-field">
                             <button id="btnCalculator" class="btn btn-primary full-width">Calculate</button>
                         </div>
@@ -88,52 +90,59 @@
         </div>
         <!-- End Results Container   -->
     </div>
+
     <script type="module">
         // Set Css Theme
         setSelectedTheme();
+
+        /* Imports */
         import { FinanceCalculator } from './finance-calculator.js';
         import { Validator } from './validator.js';
 
+        /* Sets Span with id Today to todays date mm/dd/yr */
         document.getElementById('today').innerHTML = new Date().toLocaleDateString('en-US');
 
+        /* Calculate Btn Handler */
         document.getElementById('btnCalculator').onclick = function () {
+            /* Global Variables */
             let monthlyPayment = document.getElementById('txtMonthlyPayment').value;
             let rate = document.getElementById('txtYearlyRate').value;
             let years = document.getElementById('listNumOfYears').value;
             let errorLogEl = document.getElementById('errorLog');
-            console.log(years);
+            let errorLog = [];
 
-
+            /*Create New Validator object and Add methods to Validator object */
             let monthlyPaymentValidator = new Validator('Monthly Payment', monthlyPayment);
             monthlyPaymentValidator.addRequiredField();
             monthlyPaymentValidator.addRequiredFloatField();
             monthlyPaymentValidator.addFloatMinField(100);
-            console.log(monthlyPaymentValidator);
 
+            /*Create New Validator object and Add methods to Validator object */
             let rateValidator = new Validator('Interest Rate', rate);
             rateValidator.addRequiredField();
             rateValidator.addRequiredFloatField();
             rateValidator.addFloatMaxField(100);
 
-            let errorLog = [];
-
+            /*  Validates Inputs, if False add error message to ErrorLog*/
             if (!monthlyPaymentValidator.validate()) {
                 for (let msg of monthlyPaymentValidator.messages) {
                     errorLog.push(msg);
                 }
             }
-
+            /*  Validates Inputs, if False add error message to ErrorLog*/
             if (!rateValidator.validate()) {
                 for (let msg of rateValidator.messages) {
                     errorLog.push(msg);
                 }
             }
+            /*  Validates Inputs, if True, set Innter html to calculated Value*/
             if (monthlyPaymentValidator.validate() && rateValidator.validate()) {
                 errorLogEl.innerHTML = '';
                 let futureValue = FinanceCalculator.calculateFutureValue(monthlyPayment, rate, years);
                 console.log(futureValue);
                 document.getElementById('futureValue').innerHTML = 'The future value is ' + FinanceCalculator.convertToCurrency(futureValue);
             }
+            /* Else if False Display Error Messages */
             else {
                 errorLogEl.innerHTML = '';
                 let errorLogMessage = `<ul>`;
@@ -142,7 +151,6 @@
                 }
                 document.getElementById('errorLog').innerHTML = errorLogMessage + `</ul>`;
             }
-            console.log(errorLog);
         }
 
     </script>

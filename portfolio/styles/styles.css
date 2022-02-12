@@ -1,0 +1,36 @@
+.card {
+  background-color: var(--card-background-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 2em;
+  color: var(--card-title-color);
+  font-weight: 400;
+}
+
+.card-content {
+  padding: 2px 16px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form {
+  display: inline-grid;
+  grid-template-columns: auto;
+}
+
+.form-field {
+  padding: 20px;
+}
+.assign-container {
+  padding: 10px;
+}
+
+.assign-content {
+  margin: 3% auto 0;
+}

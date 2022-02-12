@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+}
+
+.empty-div {
+  height: 30px;
+  width: 85%;
+  position: fixed;
+  z-index: 1;
+  outline: 1px solid #579199;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% auto 15%;
+      grid-template-columns: 15% auto 15%;
+}
+
+.content {
+  color: #3f3e3e;
+  padding: 3rem 5rem;
+  height: 200vh;
+  margin-top: 3rem;
+}
+
+.content h1 {
+  color: #73a8b0;
+}
+
+#navigation {
+  border-right: 1.5px solid #579199;
+  position: fixed;
+  height: 100vh;
+  width: 15%;
+  margin-top: 30px;
+}
+
+#navigation ul {
+  left: 50%;
+  top: 5rem;
+  bottom: 5rem;
+  position: absolute;
+  margin-right: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#navigation ul li {
+  list-style: none;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#navigation ul li:hover {
+  background-color: #579199;
+  color: white;
+}
+
+#navigation ul li a {
+  padding: 0.5em;
+  display: block;
+  text-decoration: none;
+  color: #3f3e3e;
+}
+
+#navigation ul li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.grid-container-3 {
+  margin-top: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+}
+
+footer {
+  border-left: 1px solid #579199;
+  height: 100vh;
+  position: fixed;
+  text-align: center;
+  color: #3f3e3e;
+  width: 15%;
+}
+
+footer .github {
+  margin-top: 8rem;
+}
+
+footer .github a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #3f3e3e;
+}
+
+footer .github a:hover {
+  color: #579199;
+}
+
+footer .bellevue {
+  position: absolute;
+  bottom: 1%;
+  width: 100%;
+  border-top: 1px solid #579199;
+}
+
+footer .bellevue a {
+  color: #579199;
+  text-decoration: none;
+}
+
+footer .bellevue a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=custom.css.map */

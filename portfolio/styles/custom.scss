@@ -1,7 +1,8 @@
+@import '_books.scss';
 $primary-color: #73a8b0;
 $accent-color: #579199;
 $warm-color: #d88038;
-$grey-text: rgb(63, 62, 62);
+$grey-text: rgb(105, 105, 105);
 
 * {
   padding: 0;
@@ -24,12 +25,22 @@ $grey-text: rgb(63, 62, 62);
 }
 .content {
   color: $grey-text;
-  padding: 3rem 5rem;
+  padding: 2rem;
   height: 200vh;
-  margin-top: 3rem;
-  h1 {
-    color: $primary-color;
-  }
+  margin-top: 30px;
+}
+.headings {
+  color: $primary-color;
+  position: fixed;
+  top: 55px;
+  left: 0%;
+  right: 85.5%;
+  padding: 3px 15px 3px 0;
+  letter-spacing: 2px;
+  background-color: #579199;
+  font-size: 1.5rem;
+  text-align: right;
+  color: white;
 }
 #navigation {
   border-right: 1.5px solid $accent-color;

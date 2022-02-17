@@ -1,4 +1,5 @@
 @import '_books.scss';
+@import '_animations.scss';
 $primary-color: #73a8b0;
 $accent-color: #579199;
 $warm-color: #d88038;
@@ -10,7 +11,7 @@ $grey-text: rgb(105, 105, 105);
   box-sizing: border-box;
   font-family: 'IBM Plex Sans Thai Looped', sans-serif;
 }
-.empty-div {
+.empty-divider {
   height: 30px;
   width: 85%;
   position: fixed;
@@ -18,7 +19,7 @@ $grey-text: rgb(105, 105, 105);
   outline: 1px solid $accent-color;
   backdrop-filter: blur(3px);
 }
-.container {
+.layout-container {
   display: grid;
 
   grid-template-columns: 15% auto 15%;

@@ -19,7 +19,7 @@
   font-family: 'IBM Plex Sans Thai Looped', sans-serif;
 }
 
-.empty-div {
+.empty-divider {
   height: 30px;
   width: 85%;
   position: fixed;
@@ -29,7 +29,7 @@
           backdrop-filter: blur(3px);
 }
 
-.container {
+.layout-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% auto 15%;

@@ -1,10 +1,10 @@
 <!--
-    Title: trejo-future-value.html
+    Title: trejo-whatabook1.html
     Author: Professor Krasso
     Modified by: Allan Trejo
-    Date: 02-11-2022
-    Description: Compound Calculator App
-    Resources: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_static_initialization_blocks
+    Date: 02-19-2022
+    Description: XML based book App
+    Resources: https://www.w3schools.com/xml/xml_whatis.asp
 
 -->
 <!DOCTYPE html>
@@ -61,24 +61,31 @@
         // Set Css Theme
         setSelectedTheme();
 
+        /* DOM loaded event Handler */
         document.addEventListener('DOMContentLoaded', (event) => {
-
+            /* Global Variable */
             let fileName = './books.xml';
 
+            /* fetch xml data */
             fetch(fileName)
+                /* return response as text */
                 .then(res => res.text())
+                /* pass text data into XML DOM parser */
                 .then((data) => {
                     let domParser = new DOMParser();
                     let xmlBooks = domParser.parseFromString(data, 'text/xml');
 
+                    /* Function call to Load XML data into html table */
                     loadBooks(xmlBooks);
+                    /* Function adds onclick events to books isbn*/
                     addIsbnClickEvents();
                 });
 
+
+            /* Function Builds html table from xml data */
             function loadBooks(xml) {
 
                 let books = xml.getElementsByTagName('book');
-
                 let tableData = `
                 <table class="table" id="bookTable">
                         <tr>
@@ -99,13 +106,15 @@
                             </th>
                         </tr>
                         <tbody>`;
+                /* Iterates over books */
                 for (let book of books) {
+                    /* get XML DOM values */
                     let isbn = book.getElementsByTagName('isbn')[0].childNodes[0].nodeValue;
                     let title = book.getElementsByTagName('title')[0].childNodes[0].nodeValue;
                     let description = book.getElementsByTagName('description')[0].childNodes[0].nodeValue;
                     let pages = book.getElementsByTagName('pages')[0].childNodes[0].nodeValue;
                     let author = book.getElementsByTagName('author')[0].childNodes[0].nodeValue;
-
+                    /* Set up HTML table */
                     tableData += `<tr>
                                     <td data-value='ISBN'><a href='#' class='isbn-link'>${isbn}</a></td> 
                                     <td data-value='Title'>${title}</td> 
@@ -114,15 +123,20 @@
                                     <td data-value='Author'>${author}</td> 
                                 </tr>
                                 `;
-
-
-                    console.log(isbn, title, description, pages, author);
                 }
+                /* Closes table */
                 document.getElementById('bookList').innerHTML = tableData += `</tbody></table>`;
             }
+            /* iterates over querySelectorAll Array to add event listener anchorClicked */
+            function addIsbnClickEvents() {
+                let viewButtons = document.querySelectorAll('#bookTable tbody .isbn-link');
+                for (let i = 0; i < viewButtons.length; i++) {
+                    viewButtons[i].addEventListener('click', anchorClicked);
+                }
+            }
+            /* Generates a list containing selected item data */
             function anchorClicked(e) {
                 e.preventDefault();
-
                 let self = this;
                 let cell = self.parentElement;
                 let row = cell.parentElement;
@@ -137,14 +151,6 @@
 
                 document.getElementById('selectedBook').innerHTML = bookData + `</ul>`;
             }
-
-            function addIsbnClickEvents() {
-                let viewButtons = document.querySelectorAll('#bookTable tbody .isbn-link');
-                for (let i = 0; i < viewButtons.length; i++) {
-                    viewButtons[i].addEventListener('click', anchorClicked);
-                }
-            }
-
         })
 
     </script>

@@ -12,7 +12,7 @@ class FooterComponent extends HTMLElement {
 
 
       <div class='bellevue'>
-        Copyright &copy; 2022 <br><a href="#">Bellevue University</a>
+        &copy;2022 Allan Trejo<br><a href="#">Bellevue University</a>
        <br> <a href="#">Bellevue Course Repository</a> <br>
        <a href='#'><i class="fab fa-youtube"></i> Bellevue Youtube</a>
       </p>

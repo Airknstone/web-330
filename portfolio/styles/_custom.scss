@@ -1,19 +1,25 @@
-@import '_books.scss';
-@import '_animations.scss';
-$primary-color: #73a8b0;
-$accent-color: #579199;
-$warm-color: #d88038;
-$grey-text: rgb(105, 105, 105);
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+  font-family: 'Source Code Pro', monospace;
+}
+body {
+  background: $bg-color;
+}
+.intro-heading {
+  color: $primary-color;
+  text-align: left;
+  font-size: 4.5rem;
+  letter-spacing: -7px;
+}
+.intro-content {
+  margin-top: 4rem;
+  padding: 0 4rem 0 0;
 }
 .empty-divider {
   height: 30px;
-  width: 85%;
+  width: 86%;
   position: fixed;
   z-index: 1;
   outline: 1px solid $accent-color;
@@ -21,14 +27,18 @@ $grey-text: rgb(105, 105, 105);
 }
 .layout-container {
   display: grid;
-
-  grid-template-columns: 15% auto 15%;
+  grid-template-columns: 12% auto 14%;
 }
 .content {
   color: $grey-text;
-  padding: 2rem;
-  height: 200vh;
+  padding: 3rem 6rem;
+  min-height: 200vh;
   margin-top: 30px;
+  font-size: 1.1rem;
+  font-family: 'Encode Sans Expanded', sans-serif;
+}
+.card-content {
+  color: $grey-text;
 }
 .headings {
   color: $primary-color;
@@ -38,21 +48,22 @@ $grey-text: rgb(105, 105, 105);
   right: 85.5%;
   padding: 3px 15px 3px 0;
   letter-spacing: 2px;
-  background-color: #579199;
+  background-color: $primary-color;
   font-size: 1.5rem;
   text-align: right;
-  color: white;
+  color: $bg-color;
 }
 #navigation {
   border-right: 1.5px solid $accent-color;
   position: fixed;
   height: 100vh;
-  width: 15%;
+  width: 12%;
   margin-top: 30px;
 
   ul {
-    left: 50%;
+    left: 35%;
     top: 5rem;
+    right: 10%;
     bottom: 5rem;
     position: absolute;
 
@@ -100,7 +111,7 @@ footer {
   position: fixed;
   text-align: center;
   color: $grey-text;
-  width: 15%;
+  width: 14%;
   .github {
     margin-top: 8rem;
     a {

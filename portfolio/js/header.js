@@ -14,7 +14,6 @@ class HeaderComponent extends HTMLElement {
         <li><a href='./projects.html'><i class="far fa-folder-open"></i><br> Projects</a></li>
         <li><a href='./database.html'><i class="fas fa-database"></i><br> Database Diagrams</a></li>
         <li><a href='./api.html'><i class="fas fa-bezier-curve"></i><br> API's</a></li>
-        <li><a href='./bucket-list.html'><i class="fab fa-bitbucket"></i><br> Bucket List</a></li>
         </ul>  
     </nav>
 

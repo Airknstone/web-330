@@ -1,0 +1,23 @@
+#sub-head {
+  margin-top: 3rem;
+}
+.bucket {
+  padding: 1rem;
+}
+.bucket-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  ul {
+    list-style: none;
+  }
+}
+.intro-heading {
+  color: $primary-color;
+  text-align: left;
+  font-size: 4.5rem;
+  letter-spacing: -7px;
+}
+.intro-content {
+  margin-top: 1rem;
+  padding: 0 4rem 4rem 0;
+}

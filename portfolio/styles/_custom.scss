@@ -7,16 +7,7 @@
 body {
   background: $bg-color;
 }
-.intro-heading {
-  color: $primary-color;
-  text-align: left;
-  font-size: 4.5rem;
-  letter-spacing: -7px;
-}
-.intro-content {
-  margin-top: 4rem;
-  padding: 0 4rem 0 0;
-}
+
 .empty-divider {
   height: 30px;
   width: 86%;
@@ -32,7 +23,7 @@ body {
 .content {
   color: $grey-text;
   padding: 3rem 5rem;
-  min-height: 200vh;
+  min-height: 100vh;
   margin-top: 30px;
   font-size: 1rem;
   font-family: 'Encode Sans Expanded', sans-serif;
@@ -66,7 +57,6 @@ body {
     right: 10%;
     bottom: 5rem;
     position: absolute;
-
     margin-right: 3px;
     display: flex;
     flex-direction: column;
@@ -100,7 +90,7 @@ body {
 .grid-container-3 {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 4rem 1rem;
   a {
     color: $grey-text;

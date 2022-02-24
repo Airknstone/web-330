@@ -3,6 +3,25 @@
 /* $primary-color: #38c7af;
 $accent-color: #579199; */
 /* 0a192f */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 197, 197, 0.767);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #38c7af;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -13,18 +32,6 @@ $accent-color: #579199; */
 
 body {
   background: #0a192f;
-}
-
-.intro-heading {
-  color: #38c7af;
-  text-align: left;
-  font-size: 4.5rem;
-  letter-spacing: -7px;
-}
-
-.intro-content {
-  margin-top: 4rem;
-  padding: 0 4rem 0 0;
 }
 
 .empty-divider {
@@ -45,16 +52,16 @@ body {
 }
 
 .content {
-  color: rgba(173, 173, 173, 0.767);
+  color: rgba(197, 197, 197, 0.767);
   padding: 3rem 5rem;
-  min-height: 200vh;
+  min-height: 100vh;
   margin-top: 30px;
   font-size: 1rem;
   font-family: 'Encode Sans Expanded', sans-serif;
 }
 
 .card-content {
-  color: rgba(173, 173, 173, 0.767);
+  color: rgba(197, 197, 197, 0.767);
 }
 
 .headings {
@@ -113,7 +120,7 @@ body {
   padding: 0.5em;
   display: block;
   text-decoration: none;
-  color: rgba(173, 173, 173, 0.767);
+  color: rgba(197, 197, 197, 0.767);
 }
 
 #navigation ul li a:hover {
@@ -125,13 +132,13 @@ body {
   margin-top: 2rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 4rem 1rem;
 }
 
 .grid-container-3 a {
-  color: rgba(173, 173, 173, 0.767);
+  color: rgba(197, 197, 197, 0.767);
 }
 
 .grid-container-3 a:hover {
@@ -143,7 +150,7 @@ footer {
   height: 100vh;
   position: fixed;
   text-align: center;
-  color: rgba(173, 173, 173, 0.767);
+  color: rgba(197, 197, 197, 0.767);
   width: 14%;
 }
 
@@ -154,7 +161,7 @@ footer .github {
 footer .github a {
   text-decoration: none;
   font-size: 1.3rem;
-  color: rgba(173, 173, 173, 0.767);
+  color: rgba(197, 197, 197, 0.767);
 }
 
 footer .github a:hover {
@@ -188,6 +195,37 @@ footer .bellevue a:hover {
   -webkit-filter: sepia();
           filter: sepia();
   background-repeat: no-repeat;
+}
+
+#sub-head {
+  margin-top: 3rem;
+}
+
+.bucket {
+  padding: 1rem;
+}
+
+.bucket-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.bucket-list ul {
+  list-style: none;
+}
+
+.intro-heading {
+  color: #38c7af;
+  text-align: left;
+  font-size: 4.5rem;
+  letter-spacing: -7px;
+}
+
+.intro-content {
+  margin-top: 1rem;
+  padding: 0 4rem 4rem 0;
 }
 
 .card {
@@ -231,7 +269,7 @@ footer .bellevue a:hover {
 .card-subtitle {
   margin-top: 1rem;
   text-align: center;
-  color: rgba(173, 173, 173, 0.767);
+  color: rgba(197, 197, 197, 0.767);
 }
 
 .card-subtitle a:hover {

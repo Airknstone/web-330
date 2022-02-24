@@ -7,19 +7,16 @@ class FooterComponent extends HTMLElement {
     this.innerHTML = `
     <footer>
     <div class='github'>
-    <a href="#"><i class="fab fa-github"></i><br> GitHub </a>
+    <a href="https://github.com/Airknstone" target="_blank"><i class="fab fa-github"></i><br> GitHub </a>
     </div>
 
 
       <div class='bellevue'>
-        &copy;2022 Allan Trejo<br><a href="#">Bellevue University</a>
-       <br> <a href="#">Bellevue Course Repository</a> <br>
-       <a href='#'><i class="fab fa-youtube"></i> Bellevue Youtube</a>
+        &copy;2022 Allan Trejo<br><a href="https://www.bellevue.edu" target="_blank">Bellevue University</a>
+       <br> <a href="https://github.com/buwebdev" target="_blank">Bellevue Course Repository</a> <br>
+       <a href='https://www.youtube.com/c/bellevueuniversity' target="_blank"><i class="fab fa-youtube"></i> Bellevue Youtube</a>
       </p>
     </footer>
-
-      </body>
-      </html>
         `;
   }
 }

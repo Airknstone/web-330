@@ -3,6 +3,7 @@
   box-shadow: 0 4px 8px 0 $hover-color;
   color: $hover-color;
   transition: all 0.3s;
+  min-height: 350px;
 }
 
 .card-title {
@@ -23,6 +24,9 @@
 }
 .card-content {
   padding: 2px 16px;
+  p {
+    font-size: 0.9rem;
+  }
 }
 .card-subtitle {
   margin-top: 1rem;

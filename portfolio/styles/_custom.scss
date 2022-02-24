@@ -31,10 +31,10 @@ body {
 }
 .content {
   color: $grey-text;
-  padding: 3rem 6rem;
+  padding: 3rem 5rem;
   min-height: 200vh;
   margin-top: 30px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: 'Encode Sans Expanded', sans-serif;
 }
 .card-content {
@@ -101,8 +101,13 @@ body {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: auto auto auto;
-
-  grid-gap: 30px;
+  grid-gap: 4rem 1rem;
+  a {
+    color: $grey-text;
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }
 
 footer {

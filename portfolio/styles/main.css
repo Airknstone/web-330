@@ -46,10 +46,10 @@ body {
 
 .content {
   color: rgba(173, 173, 173, 0.767);
-  padding: 3rem 6rem;
+  padding: 3rem 5rem;
   min-height: 200vh;
   margin-top: 30px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: 'Encode Sans Expanded', sans-serif;
 }
 
@@ -127,7 +127,15 @@ body {
   display: grid;
   -ms-grid-columns: auto auto auto;
       grid-template-columns: auto auto auto;
-  grid-gap: 30px;
+  grid-gap: 4rem 1rem;
+}
+
+.grid-container-3 a {
+  color: rgba(173, 173, 173, 0.767);
+}
+
+.grid-container-3 a:hover {
+  color: #38c7af;
 }
 
 footer {
@@ -189,6 +197,7 @@ footer .bellevue a:hover {
   color: rgba(201, 201, 201, 0.829);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  min-height: 350px;
 }
 
 .card-title {
@@ -213,6 +222,10 @@ footer .bellevue a:hover {
 
 .card-content {
   padding: 2px 16px;
+}
+
+.card-content p {
+  font-size: 0.9rem;
 }
 
 .card-subtitle {

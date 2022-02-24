@@ -60,10 +60,6 @@ body {
   font-family: 'Encode Sans Expanded', sans-serif;
 }
 
-.card-content {
-  color: rgba(197, 197, 197, 0.767);
-}
-
 .headings {
   color: #38c7af;
   position: fixed;
@@ -236,12 +232,17 @@ footer .bellevue a:hover {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   min-height: 350px;
+  opacity: 0;
 }
 
 .card-title {
   text-align: center;
   font-size: 2em;
   font-weight: 400;
+}
+
+.card-content {
+  color: rgba(197, 197, 197, 0.767);
 }
 
 .card-columns {

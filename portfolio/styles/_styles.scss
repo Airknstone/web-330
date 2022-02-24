@@ -4,6 +4,7 @@
   color: $hover-color;
   transition: all 0.3s;
   min-height: 350px;
+  opacity: 0;
 }
 
 .card-title {
@@ -11,6 +12,9 @@
   font-size: 2em;
 
   font-weight: 400;
+}
+.card-content {
+  color: $grey-text;
 }
 .card-columns {
   margin-top: 2rem;

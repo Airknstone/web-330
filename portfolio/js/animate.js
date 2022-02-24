@@ -5,7 +5,7 @@ gsap.from('.bucket-list li', {
   stagger: 0.3,
 });
 gsap.from('.bucket', { duration: 1, delay: 0.5, opacity: 0 });
-gsap.from('.card', {
-  opacity: 0,
+gsap.to('.card', {
+  opacity: 1,
   stagger: 0.3, // 0.1 seconds between when each ".box" element starts animating
 });

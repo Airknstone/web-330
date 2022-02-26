@@ -9,12 +9,12 @@ $accent-color: #579199; */
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #0a192f;
+  background: #09182e;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(197, 197, 197, 0.767);
+  background: rgba(189, 189, 189, 0.856);
 }
 
 /* Handle on hover */
@@ -31,7 +31,7 @@ $accent-color: #579199; */
 }
 
 body {
-  background: #0a192f;
+  background: #09182e;
 }
 
 .empty-divider {
@@ -52,9 +52,11 @@ body {
 }
 
 .content {
-  color: rgba(197, 197, 197, 0.767);
+  color: rgba(189, 189, 189, 0.856);
   padding: 3rem 5rem;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
   margin-top: 30px;
   font-size: 1rem;
   font-family: 'Encode Sans Expanded', sans-serif;
@@ -71,7 +73,7 @@ body {
   background-color: #38c7af;
   font-size: 1.5rem;
   text-align: right;
-  color: #0a192f;
+  color: #09182e;
 }
 
 #navigation {
@@ -116,7 +118,7 @@ body {
   padding: 0.5em;
   display: block;
   text-decoration: none;
-  color: rgba(197, 197, 197, 0.767);
+  color: rgba(189, 189, 189, 0.856);
 }
 
 #navigation ul li a:hover {
@@ -134,7 +136,7 @@ body {
 }
 
 .grid-container-3 a {
-  color: rgba(197, 197, 197, 0.767);
+  color: rgba(189, 189, 189, 0.856);
 }
 
 .grid-container-3 a:hover {
@@ -146,7 +148,7 @@ footer {
   height: 100vh;
   position: fixed;
   text-align: center;
-  color: rgba(197, 197, 197, 0.767);
+  color: rgba(189, 189, 189, 0.856);
   width: 14%;
 }
 
@@ -157,7 +159,7 @@ footer .github {
 footer .github a {
   text-decoration: none;
   font-size: 1.3rem;
-  color: rgba(197, 197, 197, 0.767);
+  color: rgba(189, 189, 189, 0.856);
 }
 
 footer .github a:hover {
@@ -224,8 +226,37 @@ footer .bellevue a:hover {
   padding: 0 4rem 4rem 0;
 }
 
+.svg-component {
+  position: absolute;
+  top: 100;
+  right: -180px;
+  width: 500px;
+  height: 500px;
+}
+
+.path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  -webkit-animation: dash 5s forwards infinite;
+          animation: dash 5s forwards infinite;
+  stroke: #38c7af;
+  stroke-width: 12;
+}
+
+@-webkit-keyframes dash {
+  50% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  50% {
+    stroke-dashoffset: 0;
+  }
+}
+
 .card {
-  background-color: #0a192f;
+  background-color: #09182e;
   -webkit-box-shadow: 0 4px 8px 0 rgba(201, 201, 201, 0.829);
           box-shadow: 0 4px 8px 0 rgba(201, 201, 201, 0.829);
   color: rgba(201, 201, 201, 0.829);
@@ -242,7 +273,7 @@ footer .bellevue a:hover {
 }
 
 .card-content {
-  color: rgba(197, 197, 197, 0.767);
+  color: rgba(189, 189, 189, 0.856);
 }
 
 .card-columns {
@@ -270,7 +301,7 @@ footer .bellevue a:hover {
 .card-subtitle {
   margin-top: 1rem;
   text-align: center;
-  color: rgba(197, 197, 197, 0.767);
+  color: rgba(189, 189, 189, 0.856);
 }
 
 .card-subtitle a:hover {

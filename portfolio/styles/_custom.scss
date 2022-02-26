@@ -24,6 +24,8 @@ body {
   color: $grey-text;
   padding: 3rem 5rem;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
   margin-top: 30px;
   font-size: 1rem;
   font-family: 'Encode Sans Expanded', sans-serif;

@@ -1,4 +1,4 @@
-gsap.from('.intro-heading', { duration: 0.5, x: -300, opacity: 0 });
+gsap.to('.intro-heading', { duration: 1.5, opacity: 1, y: 50 });
 gsap.from('.bucket-list li', {
   opacity: 0,
   delay: 0.5,

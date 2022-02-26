@@ -15,6 +15,9 @@
   color: $primary-color;
   text-align: left;
   font-size: 4.5rem;
+  opacity: 0;
+  top: -50px;
+  position: relative;
   letter-spacing: -7px;
 }
 .intro-content {
@@ -23,10 +26,10 @@
 }
 .svg-component {
   position: absolute;
-  top: 100;
-  right: -180px;
-  width: 500px;
-  height: 500px;
+  top: 20;
+  right: -220px;
+  width: 650px;
+  height: 620px;
 }
 .path {
   stroke-dasharray: 200;

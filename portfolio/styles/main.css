@@ -218,6 +218,9 @@ footer .bellevue a:hover {
   color: #38c7af;
   text-align: left;
   font-size: 4.5rem;
+  opacity: 0;
+  top: -50px;
+  position: relative;
   letter-spacing: -7px;
 }
 
@@ -228,10 +231,10 @@ footer .bellevue a:hover {
 
 .svg-component {
   position: absolute;
-  top: 100;
-  right: -180px;
-  width: 500px;
-  height: 500px;
+  top: 20;
+  right: -220px;
+  width: 650px;
+  height: 620px;
 }
 
 .path {

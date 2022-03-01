@@ -54,7 +54,7 @@ body {
 .content {
   color: rgba(189, 189, 189, 0.856);
   padding: 3rem 5rem;
-  min-height: 100vh;
+  min-height: 92.5vh;
   position: relative;
   overflow: hidden;
   margin-top: 30px;
@@ -79,7 +79,7 @@ body {
 #navigation {
   border-right: 1.5px solid #60d2c1a9;
   position: fixed;
-  height: 100vh;
+  height: 100%;
   width: 12%;
   margin-top: 30px;
 }
@@ -182,17 +182,39 @@ footer .bellevue a:hover {
   text-decoration: underline;
 }
 
-.books {
-  /*   background-image: url('https://images.unsplash.com/photo-1507133750040-4a8f57021571?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
- */
-  height: 500px;
-  background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
-  background-attachment: fixed;
-  background-position: 50% 150%;
-  background-size: cover;
-  -webkit-filter: sepia();
-          filter: sepia();
-  background-repeat: no-repeat;
+.header {
+  color: #38c7af;
+  font-size: 3.5rem;
+  text-align: center;
+  border-bottom: 1px solid #38c7af;
+  margin: 0 13rem 3rem;
+}
+
+.intro {
+  padding: 0 6rem;
+  text-align: center;
+}
+
+.about {
+  margin-top: 2rem;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 50px 10px;
+  text-align: center;
+}
+
+.about img {
+  width: 30rem;
+  height: 25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about .about-text {
+  padding: 8rem 0;
 }
 
 #sub-head {
@@ -206,8 +228,8 @@ footer .bellevue a:hover {
 .bucket-list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
 }
 
 .bucket-list ul {

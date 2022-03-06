@@ -1,3 +1,9 @@
+/* 
+Title: footer.js
+Author: Allan Trejo
+Date: 03-5-2022
+Description: Web component for footer
+*/
 class FooterComponent extends HTMLElement {
   constructor() {
     super();

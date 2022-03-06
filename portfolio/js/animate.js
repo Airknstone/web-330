@@ -1,3 +1,9 @@
+/* 
+Title: animate.js
+Author: Allan Trejo
+Date: 03-5-2022
+Description: animations with GSAP
+*/
 gsap.to('.intro-heading', { duration: 1.5, opacity: 1, y: 50 });
 gsap.from('.bucket-list li', {
   opacity: 0,

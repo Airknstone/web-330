@@ -1,3 +1,10 @@
+/* 
+Title: svgcomponent.js
+Author: Allan Trejo
+Date: 03-5-2022
+Description: Web component for Globe SVG
+*/
+
 class SvgComponent extends HTMLElement {
   constructor() {
     super();
